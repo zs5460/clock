@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-
+	ebiten.SetWindowPosition(ebiten.ScreenSizeInFullscreen())
 	ebiten.SetFullscreen(true)
 	ebiten.SetCursorMode(ebiten.CursorModeHidden)
 	ebiten.SetMaxTPS(30)
