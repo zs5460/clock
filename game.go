@@ -55,7 +55,7 @@ func (g *Game) Update() error {
 
 func (g *Game) Draw(screen *ebiten.Image) {
 	timestr := time.Now().Format("15:04:05")
-	x := (screenWidth - dotWidth*8*6 - dotWidth) / 2
+	x := (screenWidth - (dotWidth*8*6 - dotWidth)) / 2
 	y := (screenHeight - dotWidth*7) / 2
 	for i := 0; i < 8; i++ {
 		char := timestr[i : i+1]
