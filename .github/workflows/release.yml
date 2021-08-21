@@ -5,11 +5,8 @@ jobs:
 
     strategy:
       matrix:
-        name: [main-linux-amd64, main-windows-amd64]
+        name: [main-windows-amd64]
         include:
-          - name: main-linux-amd64
-            os: linux
-            arch: amd64
           - name: main-windows-amd64
             os: windows
             arch: amd64
@@ -31,15 +28,7 @@ jobs:
       env:
         GOOS: ${{ matrix.os }}
         GOARCH: ${{ matrix.arch }}
-        
-    - name: Upload snapshots
-      uses: actions/upload-artifact@v1.0.0
-      with:
-        # Artifact name
-        name: ${{ matrix.name }}
-        # Directory containing files to upload
-        path: ${{ matrix.name }}
-        
+
     - name: Upload releases
       if: startsWith(github.ref, 'refs/tags/') # on tag
       uses: svenstaro/upload-release-action@v1-release
