@@ -14,7 +14,7 @@ func main() {
 	ebiten.SetWindowPosition(ebiten.ScreenSizeInFullscreen())
 	ebiten.SetFullscreen(true)
 	ebiten.SetCursorMode(ebiten.CursorModeHidden)
-	ebiten.SetMaxTPS(30)
+	ebiten.SetTPS(30)
 	if err := ebiten.RunGame(&Game{}); err != nil {
 		log.Fatal(err)
 	}
